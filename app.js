@@ -33,6 +33,7 @@ async function parseResult(searchResult) {
 function movieSearch() {
   submission = document.querySelector('.search-section').addEventListener('submit', (e) => {
     e.preventDefault();
+    document.querySelector('.movie-list').innerHTML = '';
     let searchValue = document.querySelector('#blank').value
     if (searchValue != '') {
       parseResult(searchValue);
