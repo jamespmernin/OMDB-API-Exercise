@@ -26,14 +26,17 @@ async function parseResult(searchResult) {
   } catch (error) {
     console.log(`Error: ${error}`);
   } finally {
-    console.log('Finally got it.');
+    console.log('Finished parsing results.');
   }
 }
 
 function movieSearch() {
   submission = document.querySelector('.search-section').addEventListener('submit', (e) => {
     e.preventDefault();
-    parseResult(document.querySelector('#blank').value);
+    let searchValue = document.querySelector('#blank').value
+    if (searchValue != '') {
+      parseResult(searchValue);
+    }
   });
 }
 
