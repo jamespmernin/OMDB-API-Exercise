@@ -1,7 +1,3 @@
-const DOMAIN = 'http://www.omdbapi.com/';
-const API_KEY = 'd715f08c';
-const BASE_URL = `${DOMAIN}?apikey=${API_KEY}&`;
-
 function renderList(movies) {
   let movieList = document.querySelector('.movie-list');
   for (let i = 0; i < movies.length; i++) {
@@ -20,6 +16,9 @@ function renderList(movies) {
 }
 
 async function parseResult(searchResult) {
+  const DOMAIN = 'http://www.omdbapi.com/';
+  const API_KEY = 'd715f08c';
+  const BASE_URL = `${DOMAIN}?apikey=${API_KEY}&`;
   try {
     let movies = await axios.get(`${BASE_URL}s=${searchResult}`);
     // console.log(movies.data.Search); // save this for future development to get data
