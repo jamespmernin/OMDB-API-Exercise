@@ -22,7 +22,7 @@ function renderList(movies) {
 async function parseResult(searchResult) {
   try {
     let movies = await axios.get(`${BASE_URL}s=${searchResult}`);
-    console.log(movies.data.Search);
+    // console.log(movies.data.Search); // save this for future development to get data
     renderList(movies.data.Search);
   } catch (error) {
     console.log(`Error: ${error}`);
